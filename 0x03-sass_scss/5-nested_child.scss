@@ -1,0 +1,10 @@
+/* Sass file : nested declaration */
+$first-color: #3d3d3d;
+$second-color: #ff0000;
+
+body {
+  color: $first-color;
+  > .red {
+    color: $second-color;
+  }
+}
