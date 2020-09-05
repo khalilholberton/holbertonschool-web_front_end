@@ -1,0 +1,10 @@
+/* Sass file : nested declaration */
+$primary-color: #ff0000;
+$hover-color: #00ff00;
+
+button {
+  color: $primary-color;
+  &:hover {
+    color: $hover-color;
+  }
+}
