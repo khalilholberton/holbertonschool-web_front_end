@@ -1,0 +1,14 @@
+/* Sass file : nested desclation */
+$first-Fsize: 14px;
+$second-Fsize: 16px;
+$third-Fsize: 12px;
+
+body {
+  font-size: $first-Fsize;
+  h1 {
+    font-size: $second-Fsize;
+    &.smaller {
+      font-size: $third-Fsize;
+    }
+  }
+}
