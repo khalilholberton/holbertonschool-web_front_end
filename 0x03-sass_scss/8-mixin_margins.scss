@@ -5,7 +5,7 @@
 }
 body {
   @include mymargin(10px);
-  div {
-    @include mymargin(15px);
-  }
+}
+div {
+  @include mymargin(15px);
 }
