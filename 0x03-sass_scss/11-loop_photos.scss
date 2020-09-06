@@ -1,0 +1,8 @@
+/* Sass file : each */
+@import "11-photos";
+
+@each $name in list {
+  .photo-#{$name} {
+    background: image-url("photos/#{$name}.jpg") no-repeat;
+  }
+}
