@@ -1,7 +1,7 @@
 /* Sass file : for */
 $tag: h;
 @for $i from 1 to 6 {
-  #{$tag}-#{$i} {
+  #{$tag}#{$i} {
     font-size: 0px + $i;
   }
 }
