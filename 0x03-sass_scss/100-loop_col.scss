@@ -1,0 +1,8 @@
+/* Sass file : for */
+$class-slug: col;
+
+@for $i from 1 through 4 {
+  .#{$class-slug}-#{$i} {
+    width: 100% / $i;
+  }
+}
