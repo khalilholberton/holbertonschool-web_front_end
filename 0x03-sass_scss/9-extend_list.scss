@@ -1,0 +1,16 @@
+/* Sass file : nested declaration, extend */
+$Fsize: 12px;
+$first-color: #00ff00;
+$second-color: #ff0000;
+
+.info {
+  font-size: $Fsize;
+}
+.success {
+  color: $first-color;
+  @extend .info;
+}
+.warning {
+  color: $second-color;
+  @extend .info;
+}
