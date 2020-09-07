@@ -1,0 +1,22 @@
+/* Sass file */
+$size-one: 20px;
+$size-two: 18px;
+$size-three: 16px;
+$size-four: 14px;
+$color: #1d1d1d;
+
+h1 {
+  font-size: $size-one;
+  @media screen and (max-width: 960px) {
+    font-size: $size-two;
+  }
+  @media screen and (max-width: 640px) {
+    font-size: $size-three;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: $size-four;
+    &.small {
+      color: #1d1d1d;
+    }
+  }
+}
