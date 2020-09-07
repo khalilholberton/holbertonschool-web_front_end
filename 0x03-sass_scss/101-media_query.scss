@@ -1,0 +1,10 @@
+/* Sass file : if */
+$first-Fsize: 20px;
+$second-Fsize: 14px;
+
+h1 {
+  font-size: $first-Fsize;
+  @media screen and (max-width: 20px) {
+    font-size: $second-Fsize;
+  }
+}
