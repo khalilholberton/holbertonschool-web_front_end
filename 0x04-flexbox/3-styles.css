@@ -530,7 +530,7 @@ ul.row {
 }
 /* Section SERVICES 
             ============================= */
-.card-services .row {
+.section-services .row {
   flex-wrap: wrap;
 }
 
