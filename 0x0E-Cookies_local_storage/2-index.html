@@ -1,0 +1,45 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Login to the website</h1>
+    <input type="text" id="firstname" placeholder="Firstname" />
+    <input type="text" id="email" placeholder="Email" />
+    <button onclick="setCookies()">Log me in</button>
+    <h1>Cookies</h1>
+    <button onclick="showCookies()">Show the cookies</button>
+  </body>
+  <script>
+    function setCookies() {
+      let nameVAL = document.getElementById("firstname").value;
+      let mailVAL = document.getElementById("email").value;
+      let mydate = new Date();
+      mydate.setTime(mydate.getTime() + 10 * 24 * 60 * 60 * 1000);
+      document.cookie = `firstname=${nameVAL}; expires=${mydate.toUTCString()};`;
+      document.cookie = `email=${mailVAL}; expires=${mydate.toUTCString()};`;
+    }
+    function showCookies() {
+      let DOC = document.createElement("p");
+      DOC.innerHTML = `Email: ${
+        getCookie("email").split("=")[1]
+      } - Firstname: ${getCookie("firstname").split("=")[1]}`;
+      document.body.appendChild(DOC);
+    }
+    function getCookie(name) {
+      let nemaVAL = `${name}=`;
+      let cookieval = decodeURIComponent(document.cookie);
+      let cookz = cookieVAL.split(";");
+      let test = "   test";
+      for (let c = 0; c < cookz.length; c++) {
+        cookz[c] = cookz[c].trimStart();
+        if (cookz[c].indexOf(name) == 0) {
+          return cookz[c];
+        }
+      }
+      return "";
+    }
+  </script>
+</html>

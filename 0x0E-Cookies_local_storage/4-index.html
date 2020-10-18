@@ -1,0 +1,59 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  </head>
+  <body>
+    <div id="form">
+      <h2>Login to the website</h2>
+      <input type="text" id="firstname" placeholder="Firstname" />
+      <input type="text" id="email" placeholder="Email" />
+      <button onclick="setCookiesAndShowWelcomeMessage()">Log me in</button>
+    </div>
+  </body>
+  <script>
+    function showCookies() {
+      let DOC = document.createElement("p");
+      DOC.innerHTML = `Email: ${Cookies.get(
+        "email"
+      )} - Firstname: ${Cookies.get("firstname")}`;
+      document.body.appendChild(DOC);
+    }
+    function showForm() {
+      let IN = document.getElementById("welcome");
+      let myC = document.getElementById("form");
+      IN.style.display = "none";
+      myC.style.display = "block";
+    }
+    function hideForm() {
+      let myC = document.getElementById("form");
+      myC.style.display = "none";
+    }
+    function deleteCookiesAndShowForm() {
+      Object.keys(Cookies.get()).forEach((cookie) => Cookies.remove(cookie));
+      showForm();
+    }
+    function showWelcomeMessageOrForm() {
+      let fname = Cookies.get("firstname");
+      if (fname == "") {
+        showForm();
+      } else {
+        let ch = document.createElement("div");
+        ch.setAttribute("id", "welcome");
+        let DC = `<h1>Welcome ${fname}</h1><a style="font-weight: 400; font-style: italic; margin-left: 10px;" onclick="deleteCookiesAndShowForm()">(logout)</a>`;
+        ch.innerHTML = DC;
+        hideForm();
+        document.body.append(ch);
+      }
+    }
+    function setCookiesAndShowWelcomeMessage() {
+      let nameVAL = document.getElementById("firstname").value;
+      let mailVAL = document.getElementById("email").value;
+      Cookies.set("firstname", nameVAL, { expires: 10 });
+      Cookies.set("email", mailVAL, { expires: 10 });
+      showWelcomeMessageOrForm();
+    }
+  </script>
+</html>
